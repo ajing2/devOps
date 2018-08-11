@@ -21,11 +21,12 @@ from command import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('^$', view=views.opsIndex),
+    url('^$', view=views.opsIndex, name="devindex"),
     url('salt/', include('salt.urls')),
     url('ansible/', include('ansible.urls')),
     url('blog/', include('blog.urls')),
     url('command/', include('command.urls')),
-    url(r'login/$', view=views.login),
-    url(r'signup/$', view=views.signup)
+    url(r'login/$', view=views.cms_login, name="cms_login"),
+    url(r'signup/$', view=views.signup, name="cms_sigup"),
+    url(r'logout/$', view=views.cms_logout, name="cms_logout"),
 ]

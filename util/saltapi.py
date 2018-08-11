@@ -16,7 +16,7 @@ class SaltServer(object):
 
 
     def getToken(self):
-        url =  "http://192.168.48.137:8000/login"
+        url =  "http://192.168.48.138:8000/login"
         headers = {"Accept": "application/json"}
         data = {
             "username": "saltapi",
@@ -30,7 +30,7 @@ class SaltServer(object):
         return token
 
     def runModules(self, minionid, fun, arg=None):
-        url = "http://192.168.48.137:8000"
+        url = "http://192.168.48.138:8000"
         data = {
             "client": "local",
             "tgt": minionid,
@@ -54,7 +54,7 @@ class SaltServer(object):
 
 
     def runRunner(self, fun, **kwargs):
-        url = "http://192.168.48.137:8000"
+        url = "http://192.168.48.138:8000"
         data = {
             "client": "runner",
             "fun": fun,

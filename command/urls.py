@@ -13,4 +13,6 @@ from command import views
 
 urlpatterns = [
     url(r'^$', view=views.index),
+    url(r'setting/$', view=views.setting, name="setting"),
+    url(r'check/email/(?P<email>\S+)/$', view=views.checkEmail, name="checkEmail"),
 ]
